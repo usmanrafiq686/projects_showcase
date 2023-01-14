@@ -2,10 +2,8 @@ import pandas as pd
 from scipy import stats
 import numpy as np
 
-df_cls = pd.read_csv('D:\DFKI_Job\Data_code_4chan\Compile_smaller_data\Final_file_cls_data.csv',
-                     parse_dates=['Date'], index_col=['Date'], dayfirst=True).fillna(method='ffill')
-df_mkt_cap = pd.read_csv('D:\DFKI_Job\Data_code_4chan\Compile_smaller_data\Final_file_mc_data.csv',
-                         parse_dates=['Date'], index_col=['Date'], dayfirst=True).fillna(method="ffill")
+df_cls = pd.read_csv('cls_data.csv', parse_dates=['Date'], index_col=['Date'], dayfirst=True).fillna(method='ffill')
+df_mkt_cap = pd.read_csv('mc_data.csv', parse_dates=['Date'], index_col=['Date'], dayfirst=True).fillna(method="ffill")
 
 weighted_values = pd.DataFrame()
 total_cap['Total Cap'] = df_mkt_cap.sum(axis=1).to_frame()
